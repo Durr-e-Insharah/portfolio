@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insharah | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f7f3ed;         /* Warm Beige Background */
+            --card-bg: #ffffff;        /* Clean White Card Surface */
+            --text-dark: #111111;      /* Deep Black for text */
+            --accent-red: #c0392b;     /* Eye-Catching Red Accent */
+            --secondary-bg: #ede5d8;   /* Contrast Beige for sections */
+            --border-color: #d1c7b7;   /* Subtle Border Line */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--bg-color);
+            border-bottom: 2px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-red);
+        }
+
+        section {
+            padding: 6rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-red);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        #home {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero-subtitle {
+            color: var(--accent-red);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: #ffffff;
+            padding: 0.75rem 1.8rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #962d22;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background-color: var(--secondary-bg);
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            margin-right: 0.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-red);
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 2px solid var(--text-dark);
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+        }
+
+        .contact-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-box p {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Insharah<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <p class="hero-subtitle">Hello, I'm</p>
+        <h1 class="hero-title">Insharah</h1>
+        <p class="hero-desc">BS Artificial Intelligence Student at University of Wah & Intern Developer at Xvera Solutions.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>I am <strong>Insharah</strong>, a dedicated 3rd-semester Bachelor of Science in Artificial Intelligence (BSAI) student at the <strong>University of Wah</strong>. Currently, I am expanding my real-world development expertise working as an <strong>Intern Developer at Xvera Solutions</strong>.</p>
+            <p style="margin-top: 1rem;">I am passionate about building modern web applications, working with databases, and solving complex problems using software engineering and AI concepts.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid-container">
+
+            <div class="card project-card">
+                <h3>Job Portal Application</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">A job recruitment and posting platform built to connect job seekers with opportunities.</p>
+                <div>
+                    <strong style="display: block; margin-bottom: 0.4rem;">Tech Used:</strong>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">SQL</span>
+                </div>
+                <a href="https://github.com/Durr-e-Insharah/Job-portal-Django" target="_blank" class="project-link">View on GitHub &rarr;</a>
+            </div>
+
+            <div class="card project-card">
+                <h3>Bookstore Application</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">An interactive online bookstore system for browsing, managing, and viewing books.</p>
+                <div>
+                    <strong style="display: block; margin-bottom: 0.4rem;">Tech Used:</strong>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                </div>
+                <a href="https://github.com/Durr-e-Insharah/learning-django" target="_blank" class="project-link">View on GitHub &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-list">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Django</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">Java</span>
+            <span class="skill-badge">HTML / CSS</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">MS Access</span>
+            <span class="skill-badge">Database Management</span>
+            <span class="skill-badge">Object-Oriented Programming</span>
+            <span class="skill-badge">MS Office</span>
+            <span class="skill-badge">Communication Skills</span>
+            <span class="skill-badge">Technical Writing</span>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Services</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3 style="color: var(--accent-red); margin-bottom: 0.5rem;">Backend Development</h3>
+                <p>Designing robust backend architectures, APIs, and business logic using Django and Python.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent-red); margin-bottom: 0.5rem;">Full-Stack Web Development</h3>
+                <p>Building responsive, aesthetic, and functional web applications end-to-end with Django templates, HTML, and CSS.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent-red); margin-bottom: 0.5rem;">Database Management (DBMS)</h3>
+                <p>Structuring relational databases, writing queries, and optimizing schemas with SQL and MS Access.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent-red); margin-bottom: 0.5rem;">Software & Scripting Solutions</h3>
+                <p>Developing object-oriented desktop and logic solutions using C++ and Java.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-box">
+            <p>Interested in working together or have any questions?</p>
+            <p>GitHub: <a href="https://github.com/Durr-e-Insharah" target="_blank" style="color: var(--accent-red); text-decoration: none; font-weight: 700;">Durr-e-Insharah</a></p>
+            <a href="mailto:your-email@example.com" class="btn" style="margin-top: 1rem;">Send an Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Insharah. Built with Django.</p>
+    </footer>
+
+</body>
+</html>

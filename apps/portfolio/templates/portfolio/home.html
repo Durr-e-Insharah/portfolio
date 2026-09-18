@@ -1,0 +1,15 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<div style="min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <p style="color: var(--accent-red); font-weight: 800; font-size: 1.3rem; margin-bottom: 0.5rem;">WELCOME TO MY PORTFOLIO</p>
+    <h1 style="font-size: 4.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;">Hi, I'm <span style="color: var(--accent-red);">Insharah</span>.</h1>
+    <p style="font-size: 1.3rem; font-weight: 700; max-width: 650px; margin-bottom: 2rem; line-height: 1.5;">
+        BS Artificial Intelligence Student & Intern Developer specializing in Django backend and full-stack solutions.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="{% url 'projects' %}" class="btn">Explore Projects &rarr;</a>
+        <a href="{% url 'contact' %}" class="btn" style="background-color: var(--nav-bg);">Get In Touch</a>
+    </div>
+</div>
+{% endblock %}

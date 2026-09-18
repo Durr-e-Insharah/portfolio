@@ -1,0 +1,32 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<h1 class="page-title">Featured Projects</h1>
+<div class="grid-2">
+
+    <div class="card">
+        <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">Job Portal Application</h3>
+        <p style="font-weight: 600; margin-bottom: 1rem;">A recruitment platform built in Django enabling job postings, user interactions, and database management.</p>
+        <div style="margin-bottom: 1.5rem;">
+            <strong style="display: block; margin-bottom: 0.4rem; color: var(--accent-red);">Tech Used:</strong>
+            <span style="display: inline-block; background: var(--nav-bg); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700;">Python</span>
+            <span style="display: inline-block; background: var(--nav-bg); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700;">Django</span>
+            <span style="display: inline-block; background: var(--nav-bg); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700;">SQL</span>
+        </div>
+        <a href="https://github.com/Durr-e-Insharah/Job-portal-Django" target="_blank" class="btn">View GitHub Repo &rarr;</a>
+    </div>
+
+    <div class="card">
+        <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">Bookstore Application</h3>
+        <p style="font-weight: 600; margin-bottom: 1rem;">An interactive store web application built to explore dynamic model rendering and Django template flows.</p>
+        <div style="margin-bottom: 1.5rem;">
+            <strong style="display: block; margin-bottom: 0.4rem; color: var(--accent-red);">Tech Used:</strong>
+            <span style="display: inline-block; background: var(--nav-bg); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700;">Python</span>
+            <span style="display: inline-block; background: var(--nav-bg); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700;">Django</span>
+            <span style="display: inline-block; background: var(--nav-bg); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700;">SQLite</span>
+        </div>
+        <a href="https://github.com/Durr-e-Insharah/learning-django" target="_blank" class="btn">View GitHub Repo &rarr;</a>
+    </div>
+
+</div>
+{% endblock %}
